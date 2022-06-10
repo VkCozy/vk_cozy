@@ -1,0 +1,1 @@
+require_relative 'enums/user_events'

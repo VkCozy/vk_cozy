@@ -1,0 +1,37 @@
+PATH
+  remote: .
+  specs:
+    vk_cozy (0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (7.0.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    concurrent-ruby (1.1.10)
+    hash_dot (2.5.0)
+    i18n (1.10.0)
+      concurrent-ruby (~> 1.0)
+    inum (5.2.0)
+      activesupport
+      i18n
+    minitest (5.15.0)
+    ruby-enum (0.9.0)
+      i18n
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  hash_dot
+  inum
+  ruby-enum
+  vk_cozy!
+
+BUNDLED WITH
+   2.3.7
