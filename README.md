@@ -7,7 +7,7 @@ gem install vk_cozy
 
 ## Hello World
 ``` ruby
-bot = VkCozy::Bot.new('token_api') # Initialize Session for group bot
+bot = VkCozy::Bot.new('GroupToken') # Initialize Session for group bot
 
 bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
   event.answer('Im run!')
@@ -18,8 +18,8 @@ bot.run_polling() # Polling start
 ## Multibot
 ``` ruby
 $bots = [
-  VkCozy::Bot.new('token_api'),
-  VkCozy::Bot.new('token_api')
+  VkCozy::Bot.new('GroupToken'),
+  VkCozy::Bot.new('GroupToken')
 ]
 
 def run(bot) # Function for start bot
@@ -41,7 +41,7 @@ threads.each(&:join) # Run thread
 ```
 ## Use methods vk
 ``` ruby
-bot = VkCozy::Bot.new('token_api')
+bot = VkCozy::Bot.new('GroupToken')
 
 bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
   event.api.messages_send(
