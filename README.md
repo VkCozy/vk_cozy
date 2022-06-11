@@ -1,4 +1,4 @@
-# VkCozy ♦️
+# VkCozy
 framework for Vk Api
 ## Install
 ``` sh
