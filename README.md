@@ -6,6 +6,7 @@ gem install vk_cozy
 ```
 
 ## Hello World
+Больше примеров смотреть [тут](https://github.com/VkCozy/vk_cozy/tree/main/examples)!
 ``` ruby
 bot = VkCozy::Bot.new('GroupToken') # Initialize Session for group bot
 
@@ -56,3 +57,5 @@ bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
 
 bot.run_polling()
 ```
+## Contributing
+Задавайте вопросы в блоке Issues и в [чате VK](https://vk.me/join/AJQ1d6_YniGeFT3wVBroUuBr)
