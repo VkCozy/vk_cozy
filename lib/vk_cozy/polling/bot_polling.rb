@@ -4,7 +4,6 @@ module VkCozy
       @api = api
       if group_id.nil?
         @group_id = @api.request('groups.getById', {})['response'][0]['id']
-        puts @group_id
       else
         @group_id = group_id
       end
@@ -35,6 +34,5 @@ module VkCozy
         yield event
       end
     end
-
   end
 end

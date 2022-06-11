@@ -9,6 +9,44 @@ module VkCozy
     end
   end
 
+  class YaScan < VkCozy::BaseFilter
+    def initialize(pattern, flags: Regexp::IGNORECASE)
+      @flags = flags
+      @pattern = valid_pattern(pattern) # Pattern example: my name is <name> 
+    end
+
+    def valid_pattern(pattern)
+      arguments = pattern.scan(/<([\w_]*)>/).flatten
+      for i in arguments
+        pattern = pattern.sub("<#{i}>", "(?<#{i}>.*)")
+      end
+      return Regexp.new(pattern, @flags)
+    end
+
+    def check_text(text) # Text example: my name is Volk
+      text_match = @pattern.match(text)
+      if text_match.nil?
+        return false
+      end
+      return Hash[ text_match.names.zip( text_match.captures ) ] # Return: {'name' => 'Volk'}
+    end
+
+    def check_bot(event)
+      if event.type == VkCozy::BotEventType::MESSAGE_NEW
+        check_text(event.message.text)
+      end
+    end
+
+    def check_user(event)
+      if event.type == VkCozy::UserEventType::MESSAGE_NEW
+        if event.from_me
+          return false
+        end
+        check_text(event.text)
+      end
+    end
+  end
+
   class Text < BaseFilter
     def initialize(regex, **kwargs)
       @regex = regex

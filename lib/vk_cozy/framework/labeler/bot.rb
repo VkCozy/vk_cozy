@@ -3,7 +3,7 @@ module VkCozy
     attr_reader :api
 
     def initialize(api)
-      @api
+      @api = api
       @rules = []
     end
 
@@ -12,11 +12,16 @@ module VkCozy
         f = i[:filter]
         check = f.check_bot(event)
         if check
-          if check.is_a?(Hash)
+          if check.is_a?(Symbol)
+            check = [Symbol]
+          elsif check.is_a?(Array)
+            i[:func].call(event, *check)
+          elsif check.is_a?(Hash)
             i[:func].call(event, **check)
           else
             i[:func].call(event)
           end
+          return true
         end
       end
     end

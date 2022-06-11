@@ -69,6 +69,7 @@ module VkCozy
         @from_user = true 
         @user_id = @peer_id
       end
+      
     end
 
     def parse_message

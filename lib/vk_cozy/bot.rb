@@ -15,13 +15,10 @@ module VkCozy
 
     DEFAULT_EVENT_CLASS = BotEvent
 
-    def initialize(access_token, version=5.92, api=nil)
+    def initialize(access_token, version=5.92)
       @access_token = access_token
-      if api.nil?
-        @api = Api.new(access_token, version)
-      else
-        @api = api
-      end
+      @api = Api.new(access_token, version)
+      
       @polling = VkCozy::BotPolling.new(@api)
       @labeler = VkCozy::BotLabeler.new(@api)
     end
@@ -30,11 +27,24 @@ module VkCozy
       return @labeler
     end
 
-    def run_polling
+    def on_startup
+      puts 'Run polling'
+    end
+
+    def run_polling(startup=nil)
+      if startup.nil?
+        on_startup
+      elsif startup.is_a?(Proc)
+        startup.call
+      else
+        startup
+      end
       @polling.listen do |event|
         for event_raw in event['updates']
           begin
-            @labeler.filter(parse_event(event_raw))
+            if @labeler.filter(parse_event(event_raw))
+              next
+            end
           rescue Exception => e 
             raise e
           end
