@@ -78,3 +78,5 @@ bot.run_polling()
 Copyright © 2021-2022 [DanilProgram](https://github.com/danil-cpu)
 
 Данный проект имеет [MIT](https://github.com/VkCozy/vk_cozy/blob/main/LICENSE) лицензию.
+
+[![Stargazers repo roster for @VkCozy/vk_cozy](https://reporoster.com/stars/notext/VkCozy/vk_cozy)](https://github.com/VkCozy/vk_cozy/stargazers)
