@@ -61,5 +61,7 @@ bot.run_polling()
 Задавайте вопросы в блоке Issues и в [чате VK](https://vk.me/join/AJQ1d6_YniGeFT3wVBroUuBr)
 
 ## Лицензия
+
 Copyright © 2021-2022 [DanilProgram](https://github.com/danil-cpu)
+
 Данный проект имеет [MIT](https://github.com/VkCozy/vk_cozy/blob/main/LICENSE) лицензию.
