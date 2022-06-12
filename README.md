@@ -23,7 +23,7 @@ $bots = [
   VkCozy::Bot.new('GroupToken')
 ]
 
-def run(bot) # Function for start bot
+def run(bot) # Function for start multibot
   bot.on.message_handler(VkCozy::Text.new('hello'), -> (event) {
     event.answer('Hello World!')
   })
