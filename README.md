@@ -1,5 +1,18 @@
-# VkCozy
+<p align="center">
+  <a href="https://github.com/VkCozy/vk_cozy">
+    <img src="" width="175px" style="display: inline-block; border-radius: 5px">
+  </a>
+</p>
+<h1 align="center">
+  VkCozy 0.3.6
+</h1>
+<p align="center">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/VkCozy/vk_cozy">
+  <img alt="GitHub issues by-label" src="https://img.shields.io/github/issues/VkCozy/vk_cozy/bug">
+  <a href="https://badge.fury.io/rb/vk_cozy"><img src="https://badge.fury.io/rb/vk_cozy.svg" alt="Gem Version" height="18"></a>
+</p>
 vk_cozy является фреймворком для vk api, имеет удобные хэндлеры и фильтры, создан чтобы упростить разработку ботов для вк
+
 ## Install
 ``` sh
 gem install vk_cozy
