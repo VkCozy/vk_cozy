@@ -1,5 +1,5 @@
 # VkCozy
-framework for Vk Api
+Фреймворк для vk api, имеет удобные хэндлеры и фильтры, Создан чтобы упростить разработку ботов для вк
 ## Install
 ``` sh
 gem install vk_cozy
