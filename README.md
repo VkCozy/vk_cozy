@@ -10,8 +10,8 @@ gem install vk_cozy
 ``` ruby
 bot = VkCozy::Bot.new('GroupToken') # Initialize Session for group bot
 
-bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
-  event.answer('Im run!')
+bot.on.message_handler(VkCozy::Text.new('hello'), -> (event) {
+  event.answer('Hello World!')
 })
 
 bot.run_polling() # Polling start
