@@ -1,3 +1,3 @@
 module VkCozy
-  VERSION = '0.3.1'
+  VERSION = '0.3.6'
 end

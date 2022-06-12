@@ -19,7 +19,9 @@ Gem::Specification.new do |s|
     'lib/vk_cozy/polling/bot_polling.rb', 'lib/vk_cozy/polling/user_polling.rb',
     'lib/vk_cozy/framework/labeler/bot.rb', 'lib/vk_cozy/framework/labeler/user.rb',
     'lib/vk_cozy/framework/labeler/filters/filters.rb', 'lib/vk_cozy/dispatch/views/bot/event.rb',
-    'lib/vk_cozy/dispatch/views/user/event.rb', 'lib/vk_cozy/api/api.rb'
+    'lib/vk_cozy/dispatch/views/user/event.rb', 'lib/vk_cozy/api/api.rb', 'lib/vk_cozy/dev/keyboard/color.rb',
+    'lib/vk_cozy/dev/keyboard/action.rb', 'lib/vk_cozy/dev/keyboard/action.rb', 'lib/vk_cozy/dev/keyboard/keyboard.rb',
+    'lib/vk_cozy/dev/keyboard/button.rb'
   ]
   s.require_paths = ["lib"]
 

@@ -2,6 +2,7 @@ require_relative 'types/events/bot_events'
 require_relative 'dispatch/views/bot/event'
 require_relative 'framework/labeler/bot'
 require_relative 'polling/bot_polling'
+require_relative 'dev/keyboard/keyboard'
 
 module VkCozy
   class Bot
@@ -42,7 +43,8 @@ module VkCozy
       @polling.listen do |event|
         for event_raw in event['updates']
           begin
-            if @labeler.filter(parse_event(event_raw))
+            event_raw = parse_event(event_raw)
+            if @labeler.filter(event_raw)
               next
             end
           rescue Exception => e 
