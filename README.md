@@ -24,8 +24,8 @@ $bots = [
 ]
 
 def run(bot) # Function for start bot
-  bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
-    event.answer('Im run!')
+  bot.on.message_handler(VkCozy::Text.new('hello'), -> (event) {
+    event.answer('Hello World!')
   })
   
   bot.run_polling() # Polling start
