@@ -23,7 +23,7 @@ gem install vk_cozy
 ``` ruby
 bot = VkCozy::Bot.new('GroupToken') # Initialize Session for group bot
 
-bot.on.message_handler(VkCozy::Text.new('hello'), -> (event) {
+bot.on.message_handler(Filter::Text.new('hello'), -> (event) {
   event.answer('Hello World!')
 })
 
@@ -37,7 +37,7 @@ $bots = [
 ]
 
 def run(bot) # Function for start multibot
-  bot.on.message_handler(VkCozy::Text.new('hello'), -> (event) {
+  bot.on.message_handler(Filter::Text.new('hello'), -> (event) {
     event.answer('Hello World!')
   })
   
@@ -57,7 +57,7 @@ threads.each(&:join) # Run thread
 ``` ruby
 bot = VkCozy::Bot.new('GroupToken')
 
-bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
+bot.on.message_handler(Filter::Text.new('/test'), -> (event) {
   event.api.messages_send(
     peer_id: event.message.peer_id,
     message: 'use methods vk',
