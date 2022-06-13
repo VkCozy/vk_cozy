@@ -1,11 +1,11 @@
 <p align="center">
   <a href="https://github.com/VkCozy/vk_cozy">
-    <img src="" width="175px" style="display: inline-block; border-radius: 5px">
+    <img src="https://i.ibb.co/bXSntD5/2.png" width="600px" style="display: inline-block; border-radius: 5px">
   </a>
 </p>
-<h1 align="center">
+<!-- <h1 align="center">
   VkCozy 0.3.6
-</h1>
+</h1> -->
 <p align="center">
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/VkCozy/vk_cozy">
   <img alt="GitHub issues by-label" src="https://img.shields.io/github/issues/VkCozy/vk_cozy/bug">
