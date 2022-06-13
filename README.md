@@ -71,6 +71,8 @@ bot.on.message_handler(VkCozy::Text.new('/test'), -> (event) {
 bot.run_polling()
 ```
 ## Contributing
+Если вы хотите внести свой вклад в проект и сделать его лучше, ваша помощь очень приветствуется. Участие — это также отличный способ узнать больше о социальном кодировании на Github, новых технологиях и их экосистемах, а также о том, как делать конструктивные, полезные отчеты об ошибках, запросы функций и самый благородный из всех вкладов: хороший, чистый pull requests. Перед pull requests ознакомьтесь с [contribution-guide](https://www.contribution-guide.org/)
+
 Задавайте вопросы в блоке Issues и в [чате VK](https://vk.me/join/AJQ1d6_YniGeFT3wVBroUuBr)
 
 ## Лицензия
