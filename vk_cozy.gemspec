@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors = ['Danil Konenko']
   s.email = 'googloldanil@gmail.com'
   s.homepage = 'https://github.com/VkCozy/vk_cozy'
-  s.summary = 'Vk.com API Client'
-  s.description = 'framework for Vk.api'
+  s.summary = 'vk_cozy framework for vk-api'
+  s.description = 'vk_cozy является фреймворком для vk api, имеет удобные хэндлеры и фильтры, создан чтобы упростить разработку ботов для вк'
   s.license = 'MIT'
 
   s.files = [
@@ -28,4 +28,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('inum')
   s.add_development_dependency('ruby-enum')
   s.add_development_dependency('hash_dot')
+
+  s.required_ruby_version = '>= 2.7.0'
 end

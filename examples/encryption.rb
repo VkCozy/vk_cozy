@@ -3,12 +3,12 @@ require 'base64'
 
 bot = VkCozy::Bot.new('GroupToken')
 
-bot.on.message_handler(VkCozy::YaScan.new('/e <text>'), -> (event, options={}) {
+bot.on.message_handler(Filter::YaScan.new('/e <text>'), -> (event, options={}) {
   event.answer('Зашифровал ваше сообщение!')
   event.answer(Base64.encode64(options['text']))
 })
 
-bot.on.message_handler(VkCozy::YaScan.new('<text>'), -> (event, options={}) {
+bot.on.message_handler(Filter::YaScan.new('<text>'), -> (event, options={}) {
   begin
     decode = Base64.decode64(options['text'])
     event.answer('Расшифровал!')

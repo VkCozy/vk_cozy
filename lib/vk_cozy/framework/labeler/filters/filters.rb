@@ -1,4 +1,4 @@
-module VkCozy
+module Filter
   class BaseFilter
     def check_user(event) # Method check for user-bot
       raise 'Method check_user not implemented'
@@ -9,7 +9,17 @@ module VkCozy
     end
   end
 
-  class YaScan < VkCozy::BaseFilter
+  class MockedFilter < BaseFilter
+    def check_bot(event)
+      return true
+    end
+
+    def user_bot(event)
+      return true
+    end
+  end
+
+  class YaScan < BaseFilter
     def initialize(pattern, flags: Regexp::IGNORECASE)
       @flags = flags
       @pattern = valid_pattern(pattern) # Pattern example: my name is <name> 
@@ -32,25 +42,20 @@ module VkCozy
     end
 
     def check_bot(event)
-      if event.type == VkCozy::BotEventType::MESSAGE_NEW
-        check_text(event.message.text)
-      end
+      check_text(event.message.text)
     end
 
     def check_user(event)
-      if event.type == VkCozy::UserEventType::MESSAGE_NEW
-        if event.from_me
-          return false
-        end
-        check_text(event.text)
+      if event.from_me
+        return false
       end
+      check_text(event.text)
     end
   end
 
   class Text < BaseFilter
-    def initialize(regex, **kwargs)
+    def initialize(regex)
       @regex = regex
-      @raw = kwargs
     end
 
     def check_user(event)

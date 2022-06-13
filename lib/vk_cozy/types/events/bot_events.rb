@@ -25,7 +25,7 @@ module VkCozy
 
     define :VIDEO_NEW, 'video_new'
 
-       define :VIDEO_COMMENT_NEW, 'video_comment_new'
+    define :VIDEO_COMMENT_NEW, 'video_comment_new'
     define :VIDEO_COMMENT_EDIT, 'video_comment_edit'
     define :VIDEO_COMMENT_RESTORE, 'video_comment_restore'
 

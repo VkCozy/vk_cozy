@@ -19,6 +19,14 @@ module VkCozy
       
     end
 
+    def answer(text)
+      return @api.messages_send(
+        peer_id: @obj.peer_id,
+        message: text,
+        random_id: 0
+      )
+    end
+
     def [] key
       instance_variable_get("@#{key}")
     end
