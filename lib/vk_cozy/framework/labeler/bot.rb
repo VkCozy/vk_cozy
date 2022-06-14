@@ -44,7 +44,7 @@ module VkCozy
     end
 
     def filter(event)
-      for handler in get_handlers(event.type) + @handlers['*']
+      for handler in get_handlers(event.type) + get_handlers('*')
         if handler.check(event)
           return true
         end
@@ -55,9 +55,11 @@ module VkCozy
       if func.is_a?(Symbol)
         func = method(func)
       end
+
       if @handlers[type].nil?
         @handlers[type] = []
       end
+
       @handlers[type] << Bothandler.new(filter, func)
     end
 

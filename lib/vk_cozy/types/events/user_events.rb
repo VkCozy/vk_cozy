@@ -53,12 +53,22 @@ module VkCozy
     VkCozy::UserEventType::RESET_MESSAGE_FLAGS => [MSGID, 'mask'] + MESSAGE_EXTRA_FIELDS,
     VkCozy::UserEventType::MESSAGE_NEW => [MSGID, 'flags'] + MESSAGE_EXTRA_FIELDS,
     VkCozy::UserEventType::MESSAGE_EDIT => [MSGID, 'mask'] + MESSAGE_EXTRA_FIELDS,
+
     VkCozy::UserEventType::IN_READ => ['peer_id', 'local_id'],
     VkCozy::UserEventType::OUT_READ => ['peer_id', 'local_id'],
+
     VkCozy::UserEventType::FRIEND_ONLINE => ['user_id', 'extra', 'timestamp'],
     VkCozy::UserEventType::FRIEND_OFFLINE => ['user_id', 'flags', 'timestamp'],
-    VkCozy::UserEventType::DIALOG_TYPING_STATE => ['user_id', 'flags']
+
+    VkCozy::UserEventType::CHAT_EDIT => ['chat_id', 'self'],
+    VkCozy::UserEventType::CHAT_INFO_EDIT => ['type_id', 'peer_id', 'info'],
+
+    VkCozy::UserEventType::DIALOG_TYPING_STATE => ['user_id', 'flags'],
+    VkCozy::UserEventType::CHAT_TYPING_STATE => ['user_id', 'chat_id'],
+
+    VkCozy::UserEventType::COUNTER => ['count']
   }
+
   PARSE_PEER_ID_EVENTS = EVENT_ATTRS_MAPPING.map{|k, v| if v.include?('peer_id') then k end}.select{ |i| not i.nil? }
   PARSE_MESSAGE_FLAGS_EVENTS = [
     VkCozy::UserEventType::REPLACE_MESSAGE_FLAGS,
