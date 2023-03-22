@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/VkCozy/vk_cozy">
-    <img src="https://i.ibb.co/KsCtSB0/image-1.png" width="600px" style="display: inline-block; border-radius: 5px">
+    <img src="https://i.ibb.co/gySfTp3/2023-03-22-211858583.png" width="600px" style="display: inline-block; border-radius: 5px"> 
   </a>
 </p>
 <!-- <h1 align="center">
